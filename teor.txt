@@ -1,0 +1,4 @@
+pages - может использовать widgets, feuters, entities, shared
+widgets - может использовать feuters, entities, shared
+feuters- может использовать  entities, shared
+entities- может использовать  shared
