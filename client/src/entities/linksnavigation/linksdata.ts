@@ -9,16 +9,16 @@ export const LinksData:LinkType[] = [
     {
         id:2,
         title: 'Skills',
-        link:'/skill',
+        link:'/skills',
     },
     {
         id:3,
         title: 'Projects',
-        link:'/project',
+        link:'/projects',
     },
     {
         id:4,
         title: 'Contacts',
-        link:'/contact',
+        link:'/contacts',
     },
 ]

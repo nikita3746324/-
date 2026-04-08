@@ -1,0 +1,39 @@
+.logo{
+    width: 50px;
+   
+    
+}
+/* .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+.header {
+  border-bottom: 2px solid #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.linkhome{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* header.module.css - меняем цвет логотипа на красный/адский */
+
+.logo {
+    width: 50px;
+    filter: brightness(0) saturate(100%) invert(19%) sepia(98%) saturate(5000%) hue-rotate(0deg) brightness(100%) contrast(110%);
+    transition: all 0.3s ease;
+}
+
+/* Красное свечение при наведении */
+.linkhome:hover .logo {
+    filter: brightness(0) saturate(100%) invert(19%) sepia(98%) saturate(5000%) hue-rotate(0deg) brightness(120%) contrast(120%);
+    filter: drop-shadow(0 0 15px #ff0000);
+    transform: rotate(5deg) scale(1.05);
+}
