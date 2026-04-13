@@ -31,7 +31,8 @@
   transform: rotate(5deg);
 }
 
-/* navigation.module.css - ВЗРЫВАЮЩИЕСЯ ССЫЛКИ */
+/* navigation.module.css - БЕГУЩИЙ ГРАДИЕНТ */
+
 .navigationbar {
   display: flex;
   gap: 30px;
@@ -39,95 +40,24 @@
 }
 
 .navigationbar a {
-  color: #ff6666;
+  color: #ff9999;
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 1px;
   position: relative;
   padding: 5px 10px;
-  transition: all 0.2s ease;
-  text-shadow: 0 0 3px rgba(255, 0, 0, 0.5);
-}
-
-/* ВЗРЫВ при наведении */
-.navigationbar a:hover {
-  color: #ffffff;
-  text-shadow: 
-    0 0 5px #ff0000,
-    0 0 10px #ff3300,
-    0 0 20px #ff6600;
-  transform: scale(1.1);
-  animation: explode 0.4s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
-}
-
-@keyframes explode {
-  0% {
-    transform: scale(1);
-    letter-spacing: 1px;
-    filter: blur(0px);
-  }
-  30% {
-    transform: scale(1.3);
-    letter-spacing: 4px;
-    filter: blur(1px);
-    text-shadow: 
-      0 0 15px #ff0000,
-      0 0 30px #ff3300,
-      5px 5px 10px rgba(0, 0, 0, 0.5);
-  }
-  70% {
-    transform: scale(1.15);
-    letter-spacing: 2px;
-    filter: blur(0.5px);
-  }
-  100% {
-    transform: scale(1.05);
-    letter-spacing: 1px;
-    filter: blur(0px);
-  }
-}
-
-/* Дополнительные искры при наведении */
-.navigationbar a::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, rgba(255, 0, 0, 0.8), transparent);
-  border-radius: 50%;
   transition: all 0.3s ease;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
+  display: inline-block;
 }
 
-.navigationbar a:hover::before {
-  width: 120px;
-  height: 120px;
-  opacity: 0;
-  animation: sparkle 0.5s ease-out forwards;
+/* Затемнение и увеличение при наведении */
+.navigationbar a:hover {
+  color: #cc5500;
+  transform: scale(1.08);
+  text-shadow: 0 0 3px rgba(204, 68, 0, 0.5);
 }
 
-@keyframes sparkle {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.8;
-  }
-  50% {
-    width: 100px;
-    height: 100px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 150px;
-    height: 150px;
-    opacity: 0;
-  }
-}
-
-/* Адские декоративные линии */
+/* Бегущая градиентная строка */
 .navigationbar a::after {
   content: '';
   position: absolute;
@@ -135,28 +65,29 @@
   left: 0;
   width: 0%;
   height: 3px;
-  background: linear-gradient(90deg, #ff0000, #ff6600, #ff0000);
+  background: linear-gradient(90deg, 
+    #cc4400, 
+    #ff6600, 
+    #ff8800, 
+    #ff6600, 
+    #cc4400
+  );
+  border-radius: 3px;
   transition: width 0.3s ease;
-  box-shadow: 0 0 10px #ff0000;
 }
 
 .navigationbar a:hover::after {
   width: 100%;
-  animation: fireLine 0.5s ease-out;
+  animation: gradientMove 1.2s linear infinite;
+  background-size: 200% 100%;
 }
 
-@keyframes fireLine {
+@keyframes gradientMove {
   0% {
-    width: 0%;
-    background: linear-gradient(90deg, #ff0000, #ff6600, #ff0000);
-  }
-  50% {
-    width: 100%;
-    background: linear-gradient(90deg, #ff6600, #ffcc00, #ff6600);
+    background-position: 100% 0;
   }
   100% {
-    width: 100%;
-    background: linear-gradient(90deg, #ff0000, #ff6600, #ff0000);
+    background-position: -100% 0;
   }
 }
 
