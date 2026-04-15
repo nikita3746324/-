@@ -1,0 +1,10 @@
+from node:19=alpine
+
+WORKDIR /app
+
+COPY package.json ./
+RUn npm install
+COPY npm build
+
+CVD ['jpm','run''previes',],
+
